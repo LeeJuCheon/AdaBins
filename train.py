@@ -21,6 +21,7 @@ from dataloader import DepthDataLoader
 from loss import SILogLoss, BinsChamferLoss
 from utils import RunningAverage, colorize
 
+os.environ["NCCL_DEBUG"] = "INFO"
 # os.environ['WANDB_MODE'] = 'dryrun'
 PROJECT = "MDE-AdaBins"
 logging = True
@@ -31,7 +32,7 @@ def is_rank_zero(args):
 
 
 import matplotlib
-
+os.environ["NCCL_DEBUG"] = "INFO"
 
 def colorize(value, vmin=10, vmax=1000, cmap='plasma'):
     # normalize
